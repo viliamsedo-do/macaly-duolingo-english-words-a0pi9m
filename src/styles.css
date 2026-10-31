@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --sea-ink: 189 47% 17%;
+  --sea-ink-soft: 188 22% 33%;
+  --lagoon: 177 42% 52%;
+  --lagoon-deep: 185 50% 39%;
+  --palm: 148 39% 30%;
+  --sand: 127 23% 92%;
+  --foam: 137 41% 97%;
+  --surface: 0 0% 100% / 0.74;
+  --surface-strong: 0 0% 100% / 0.9;
+  --line: 189 47% 17% / 0.14;
+  --inset-glint: 0 0% 100% / 0.82;
+  --kicker: 148 39% 30% / 0.9;
+  --bg-base: 145 33% 93%;
+  --header-bg: 94 100% 99% / 0.84;
+  --chip-bg: 0 0% 100% / 0.8;
+  --chip-line: 148 39% 30% / 0.18;
+  --link-bg-hover: 0 0% 100% / 0.9;
+  --hero-a: 177 42% 52% / 0.36;
+  --hero-b: 148 39% 30% / 0.2;
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.625rem;
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 0 0% 3.9%;
+  --sidebar-primary: 0 0% 9%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 0 0% 96.1%;
+  --sidebar-accent-foreground: 0 0% 9%;
+  --sidebar-border: 0 0% 89.8%;
+  --sidebar-ring: 0 0% 3.9%;
+
+  /* Slová 1000 – hra paleta */
+  --duo-green: 96 66% 42%;
+  --duo-green-dark: 96 60% 30%;
+  --duo-blue: 199 98% 55%;
+  --duo-blue-dark: 199 82% 41%;
+  --duo-red: 3 81% 55%;
+  --duo-red-dark: 3 74% 43%;
+  --duo-yellow: 43 100% 50%;
+  --duo-yellow-dark: 39 100% 40%;
+  --duo-line: 220 14% 88%;
+  --duo-gray: 220 14% 95%;
+  --duo-ink: 227 25% 16%;
+  --duo-ink-soft: 227 12% 42%;
+  --duo-bg: 90 43% 97%;
+  --duo-snow: 0 0% 100%;
+}
+
+.dark {
+  --sea-ink: 169 36% 88%;
+  --sea-ink-soft: 170 23% 75%;
+  --lagoon: 176 60% 61%;
+  --lagoon-deep: 173 63% 73%;
+  --palm: 149 45% 61%;
+  --sand: 196 33% 9%;
+  --foam: 197 36% 10%;
+  --surface: 197 36% 10% / 0.8;
+  --surface-strong: 195 35% 9% / 0.92;
+  --line: 173 63% 73% / 0.18;
+  --inset-glint: 170 77% 86% / 0.14;
+  --kicker: 169 63% 83%;
+  --bg-base: 197 41% 7%;
+  --header-bg: 197 41% 7% / 0.8;
+  --chip-bg: 193 42% 9% / 0.9;
+  --chip-line: 173 63% 73% / 0.24;
+  --link-bg-hover: 192 34% 14% / 0.8;
+  --hero-a: 176 60% 61% / 0.18;
+  --hero-b: 149 45% 61% / 0.12;
+
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar: 0 0% 9%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 220 70% 50%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 0 0% 14.9%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 0 0% 14.9%;
+  --sidebar-ring: 0 0% 83.1%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-duo-green: hsl(var(--duo-green));
+  --color-duo-green-dark: hsl(var(--duo-green-dark));
+  --color-duo-blue: hsl(var(--duo-blue));
+  --color-duo-blue-dark: hsl(var(--duo-blue-dark));
+  --color-duo-red: hsl(var(--duo-red));
+  --color-duo-red-dark: hsl(var(--duo-red-dark));
+  --color-duo-yellow: hsl(var(--duo-yellow));
+  --color-duo-yellow-dark: hsl(var(--duo-yellow-dark));
+  --color-duo-line: hsl(var(--duo-line));
+  --color-duo-gray: hsl(var(--duo-gray));
+  --color-duo-ink: hsl(var(--duo-ink));
+  --color-duo-ink-soft: hsl(var(--duo-ink-soft));
+  --color-duo-bg: hsl(var(--duo-bg));
+  --color-duo-snow: hsl(var(--duo-snow));
+  --font-display: 'Baloo 2', 'Nunito', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Nunito', system-ui, sans-serif;
+  }
+}
+
+/* Hide Vite badge and error messages */
+body vite-error-overlay {
+  display: none;
+}
+
+/* ===== Slová 1000 – 3D tlačidlá a uzly ===== */
+
+.btn3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  border-bottom: 4px solid;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.06s ease, filter 0.15s ease, background-color 0.15s ease;
+}
+
+.btn3d:active:not(:disabled) {
+  transform: translateY(4px);
+  border-bottom-width: 0;
+  margin-bottom: 4px;
+}
+
+.btn3d:disabled {
+  cursor: not-allowed;
+}
+
+.btn3d-green {
+  background-color: hsl(var(--duo-green));
+  border-bottom-color: hsl(var(--duo-green-dark));
+  color: #fff;
+}
+
+.btn3d-blue {
+  background-color: hsl(var(--duo-blue));
+  border-bottom-color: hsl(var(--duo-blue-dark));
+  color: #fff;
+}
+
+.btn3d-gray {
+  background-color: hsl(var(--duo-gray));
+  border-bottom-color: hsl(var(--duo-line));
+  color: hsl(var(--duo-ink) / 0.45);
+}
+
+.btn3d-green:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.btn3d-blue:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.btn3d-green:disabled {
+  background-color: hsl(var(--duo-gray));
+  border-bottom-color: hsl(var(--duo-line));
+  color: hsl(var(--duo-ink) / 0.4);
+  filter: none;
+}
+
+.btn3d-continue-wrong {
+  background-color: hsl(var(--duo-snow));
+  border-bottom-color: hsl(var(--duo-line));
+  color: hsl(var(--duo-ink));
+}
+
+/* Možnosti odpovede */
+.opt3d {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  border: 2px solid hsl(var(--duo-line));
+  border-bottom-width: 4px;
+  border-radius: 1rem;
+  background-color: hsl(var(--duo-snow));
+  color: hsl(var(--duo-ink));
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.06s ease, border-color 0.12s ease, color 0.12s ease, background-color 0.12s ease;
+}
+
+.opt3d:active:not(:disabled) {
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+.opt3d:disabled {
+  cursor: default;
+}
+
+.opt3d[data-selected='true'] {
+  border-color: hsl(var(--duo-blue));
+  color: hsl(var(--duo-blue-dark));
+  background-color: hsl(var(--duo-blue) / 0.06);
+}
+
+.opt3d[data-state='correct'] {
+  border-color: hsl(var(--duo-green));
+  color: hsl(var(--duo-green-dark));
+  background-color: hsl(var(--duo-green) / 0.08);
+}
+
+.opt3d[data-state='wrong'] {
+  border-color: hsl(var(--duo-red));
+  color: hsl(var(--duo-red-dark));
+  background-color: hsl(var(--duo-red) / 0.07);
+}
+
+/* Uzly lekcii na ceste */
+.node3d {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 9999px;
+  border-bottom: 5px solid;
+  font-size: 1.35rem;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+.node3d:active:not(:disabled) {
+  transform: translateY(5px);
+  border-bottom-width: 0;
+}
+
+.node3d-done {
+  background-color: hsl(var(--duo-green));
+  border-bottom-color: hsl(var(--duo-green-dark));
+}
+
+.node3d-current {
+  background-color: hsl(var(--duo-yellow));
+  border-bottom-color: hsl(var(--duo-yellow-dark));
+  animation: node-bounce 1.6s ease-in-out infinite;
+}
+
+.node3d-locked {
+  background-color: hsl(var(--duo-gray));
+  border-bottom-color: hsl(var(--duo-line));
+  cursor: not-allowed;
+}
+
+.node3d-sm {
+  width: 3.1rem;
+  height: 3.1rem;
+  border-bottom-width: 4px;
+  font-size: 1.05rem;
+}
+
+@keyframes node-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Priebeh lišta */
+.bar-track {
+  height: 0.875rem;
+  border-radius: 9999px;
+  background-color: hsl(var(--duo-line));
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background-color: hsl(var(--duo-green));
+  transition: width 0.35s ease;
+}
+
+.bar-fill[data-tone='yellow'] {
+  background-color: hsl(var(--duo-yellow));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node3d-current {
+    animation: none;
+  }
+  .btn3d:active:not(:disabled) {
+    transform: none;
+  }
+}
